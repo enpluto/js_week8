@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONLINE TODO LIST</title>
+    <link rel="stylesheet" href="src/css/list.css" />
+  </head>
+  <body class="bg-yellow text-primary md:linear-background">
+    <!-- header -->
+    <header class="mt-4 mx-8 lg:max-w-full">
+      <ul class="flex justify-between">
+        <li>
+          <a href="login.html"
+            ><img src="src/img/logo_lg.svg" width="244px" alt=""
+          /></a>
+        </li>
+        <ol class="flex items-center gap-x-6">
+          <li class="hidden md:block font-bold" id="nickname"></li>
+          <li class="text-sm md:text-base cursor-pointer" id="logout">登出</li>
+        </ol>
+      </ul>
+    </header>
+    <!-- container -->
+    <section class="m-auto mt-4 md:mt-10 max-w-[311px] md:max-w-[500px]">
+      <!-- input -->
+      <ul
+        class="bg-white rounded-[10px] flex justify-between items-center h-12 mt-4 box-shadow"
+      >
+        <li class="w-full">
+          <input
+            type="text"
+            class="h-12 rounded-[10px] pl-4 w-full"
+            placeholder="新增待辦事項"
+            id="addList"
+          />
+        </li>
+        <li class="flex px-1">
+          <input type="image" src="src/img/plus.svg" id="submit" />
+        </li>
+      </ul>
+      <!-- list card -->
+      <div
+        class="mt-4 bg-white rounded-[10px] text-sm hidden box-shadow"
+        id="listCard"
+      >
+        <!-- select status -->
+        <ul
+          class="flex font-bold text-center h-[52px] items-center"
+          id="select"
+        >
+          <li
+            class="w-1/3 border-b-primary border-b-2 py-4 cursor-pointer"
+            id="all"
+          >
+            全部
+          </li>
+          <li
+            class="w-1/3 text-grey border-b-lightGrey border-b-2 py-4 cursor-pointer"
+            id="pending"
+          >
+            待完成
+          </li>
+          <li
+            class="w-1/3 text-grey border-b-lightGrey border-b-2 py-4 cursor-pointer"
+            id="done"
+          >
+            已完成
+          </li>
+        </ul>
+        <!-- todos container -->
+        <div class="mt-2 mb-6 px-4" id="todoList">
+          <!-- todos item -->
+          <ul
+            class="flex items-center border-b-lightGrey border-b-[1px] py-4 justify-between"
+          >
+            <ol class="flex">
+              <li>
+                <input type="checkbox" class="w-5 h-5 mr-4" id="checkbox" />
+              </li>
+              <li></li>
+            </ol>
+            <li><img src="src/img/delect.svg" id="delect" /></li>
+          </ul>
+        </div>
+        <ul class="flex justify-between px-4 pb-4">
+          <li id="count">個待完成項目</li>
+          <li class="text-grey cursor-pointer" id="delectDone">
+            清除已完成項目
+          </li>
+        </ul>
+      </div>
+      <ul class="mt-[60px] hidden" id="empty">
+        <li class="mb-4 text-center">目前無待辦事項</li>
+        <li class="flex justify-center">
+          <img src="src/img/empty.png" alt="" />
+        </li>
+      </ul>
+      <div id="login" class="line-through hidden"></div>
+    </section>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script type="module" src="src/modules/login.js"></script>
+    <script type="module" src="src/modules/logout.js"></script>
+    <script type="module" src="all.js"></script>
+  </body>
+</html>
