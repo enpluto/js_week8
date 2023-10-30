@@ -11,7 +11,7 @@ logout.addEventListener("click", (e) => {
     })
     .then((response) => {
       console.log(response);
-      document.location.href = "../../login.html";
+      document.location.href = "https://enpluto.github.io/js_week8/login.html";
     })
     .catch((error) => {
       console.log(error);
